@@ -35,7 +35,7 @@ GreenLands is a full-stack platform that enables:
 
 ### 1. Clone the Repository
 ```sh
-git clone <your-repo-url>
+git clone https://github.com/PLP-MERN-Stack-Development/week-8-capstone_-DOMOSH85.git
 cd week-8-capstone_-DOMOSH85/GreenLands
 ```
 
