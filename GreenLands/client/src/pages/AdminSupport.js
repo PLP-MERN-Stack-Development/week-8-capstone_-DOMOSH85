@@ -18,7 +18,7 @@ export default function AdminSupport() {
       fetchRequests();
       fetchNotifications();
       // Socket.IO connection
-      const socket = socketIOClient(process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000');
+      const socket = socketIOClient(import.meta.env.VITE_API_URL || 'http://localhost:5000');
       socket.on('support:new', (data) => {
         fetchNotifications();
         toast('New support request received!', { icon: '🔔' });
@@ -30,7 +30,7 @@ export default function AdminSupport() {
   const fetchRequests = async () => {
     setLoading(true);
     const token = localStorage.getItem('token');
-    const res = await fetch('/api/communication/support', {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/communication/support`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     const data = await res.json();
@@ -40,7 +40,7 @@ export default function AdminSupport() {
 
   const fetchNotifications = async () => {
     const token = localStorage.getItem('token');
-    const res = await fetch('/api/communication/notifications', {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/communication/notifications`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     const data = await res.json();
@@ -56,7 +56,7 @@ export default function AdminSupport() {
     if (!selected) return;
     setLoading(true);
     const token = localStorage.getItem('token');
-    const res = await fetch(`/api/communication/support/${selected._id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/communication/support/${selected._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

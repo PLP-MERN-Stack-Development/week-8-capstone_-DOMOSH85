@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 import { useAuth } from './AuthContext';
 
 const DataContext = createContext();
@@ -35,7 +35,7 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('/api/land', {
+      const response = await api.get('/api/land', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLandData(response.data);
@@ -52,7 +52,7 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get(`/api/farmers/${userId}`, {
+      const response = await api.get(`/api/farmers/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setFarmerData(response.data);
@@ -69,7 +69,7 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('/api/government', {
+      const response = await api.get('/api/government', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setGovernmentData(response.data);
@@ -85,7 +85,7 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('/api/analytics', {
+      const response = await api.get('/api/analytics', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setAnalyticsData(response.data);
@@ -103,7 +103,7 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get(`/api/farmers/${farmerId}`,
+      const response = await api.get(`/api/farmers/${farmerId}`,
         { headers: { Authorization: `Bearer ${token}` } });
       // Assuming crops are in response.data.farmDetails.crops
       return response.data.farmDetails?.crops || [];
@@ -118,7 +118,7 @@ export const DataProvider = ({ children }) => {
   const addCrop = async (farmerId, crop) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`/api/farmers/${farmerId}/crops`, { crop }, {
+      await api.post(`/api/farmers/${farmerId}/crops`, { crop }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       return { success: true };
@@ -131,7 +131,7 @@ export const DataProvider = ({ children }) => {
   const deleteCrop = async (farmerId, crop) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`/api/farmers/${farmerId}/crops/${encodeURIComponent(crop)}`, {
+      await api.delete(`/api/farmers/${farmerId}/crops/${encodeURIComponent(crop)}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       return { success: true };
@@ -147,7 +147,7 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get(`/api/farmers/${farmerId}`,
+      const response = await api.get(`/api/farmers/${farmerId}`,
         { headers: { Authorization: `Bearer ${token}` } });
       // Assuming equipment is in response.data.farmDetails.equipment
       return response.data.farmDetails?.equipment || [];
@@ -162,7 +162,7 @@ export const DataProvider = ({ children }) => {
   const addEquipment = async (farmerId, equipment) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`/api/farmers/${farmerId}/equipment`, { equipment }, {
+      await api.post(`/api/farmers/${farmerId}/equipment`, { equipment }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       return { success: true };
@@ -203,7 +203,7 @@ export const DataProvider = ({ children }) => {
   const addLandRecord = async (landData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('/api/land', landData, {
+      const response = await api.post('/api/land', landData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLandData(prev => [...prev, response.data]);
@@ -217,7 +217,7 @@ export const DataProvider = ({ children }) => {
   const updateLandRecord = async (id, landData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.put(`/api/land/${id}`, landData, {
+      const response = await api.put(`/api/land/${id}`, landData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLandData(prev => prev.map(item => item.id === id ? response.data : item));
@@ -232,7 +232,7 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get('/api/finance/report', {
+      const response = await api.get('/api/finance/report', {
         headers: { Authorization: `Bearer ${token}` }
       });
       return response.data;
@@ -248,7 +248,7 @@ export const DataProvider = ({ children }) => {
   const fetchNotifications = async (user) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/communication/notifications', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/communication/notifications`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();

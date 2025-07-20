@@ -96,7 +96,7 @@ const FarmerPortal = () => {
     setReportLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`/api/farmers/${user.id}/report`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/farmers/${user.id}/report`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to generate report');
@@ -131,7 +131,7 @@ const FarmerPortal = () => {
     setAddLandLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/land', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/land`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -251,7 +251,7 @@ const FarmerPortal = () => {
     setSupportLoading(true);
     try {
       const token = localStorage.getItem('token');
-      await fetch('/api/communication/support', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/communication/support`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -273,7 +273,7 @@ const FarmerPortal = () => {
     // Fetch government contacts only when opening modal
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/communication/contacts', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/communication/contacts`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await res.json();
@@ -292,7 +292,7 @@ const FarmerPortal = () => {
     setContactGovLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/communication/messages', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/communication/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -314,7 +314,7 @@ const FarmerPortal = () => {
     setShowApplySubsidy(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/subsidies', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/subsidies`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       const data = await res.json();
@@ -329,7 +329,7 @@ const FarmerPortal = () => {
     setApplySubsidyLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/subsidies/apply', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/subsidies/apply`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
