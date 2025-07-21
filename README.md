@@ -35,7 +35,7 @@ GreenLands is a full-stack platform that enables:
 
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/PLP-MERN-Stack-Development/week-8-capstone_-DOMOSH85.git
+git clonehttps://github.com/PLP-MERN-Stack-Development/week-8-capstone_-DOMOSH85.git
 cd week-8-capstone_-DOMOSH85/GreenLands
 ```
 
@@ -169,7 +169,7 @@ GreenLands/
 
 ## Deployment & Demo
 
-- **Frontend:** [https://week-8-capstone-greenlands.vercel.app/](https://your-frontend-url)
+- **Frontend:** [https://greenlands-lyart.vercel.app/](https://your-frontend-url)
 - **Backend:** [https://week-8-capstone-domosh85.onrender.com/](https://your-backend-url)
 - **Screenshots:** See below
 
@@ -189,3 +189,6 @@ GreenLands/
 
 ### Backend Log
 ![Backend Logs](./client/public/Screenshots/Backend.png)
+
+### Frontend Log
+![Frontend Logs](./client/public/Screenshots/Frontend.png)
