@@ -179,16 +179,16 @@ GreenLands/
 ## Screenshots
 
 ### Dashboard Page
-![Dashboard Page](./client/public/Screenshots/Dashboard.png)
+![Dashboard Page](/GreenLands/client/public/Screenshots/Dashboard.png)
 
 ### Register Page
-![Register Page](./client/public/Screenshots/Register.png)
+![Register Page](/GreenLands/client/public/Screenshots/Register.png)
 
 ### Login Page
-![Login Page](./client/public/Screenshots/Login.png)
+![Login Page](/GreenLands/client/public/Screenshots/Login.png)
 
 ### Backend Log
-![Backend Logs](./client/public/Screenshots/Backend.png)
+![Backend Logs](/GreenLands/client/public/Screenshots/Backend.png)
 
 ### Frontend Log
-![Frontend Logs](./client/public/Screenshots/Frontend.png)
+![Frontend Logs](/GreenLands/client/public/Screenshots/Frontend.png)
