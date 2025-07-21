@@ -21,7 +21,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import GovernmentPortal from './pages/GovernmentPortal';
 import AnalystPortal from './pages/AnalystPortal';
 import AdminPortal from './pages/AdminPortal';
-
+import './index.css';
 // ProtectedRoute for RBAC
 function ProtectedRoute({ allowedRoles, redirectTo = "/login", children }) {
   const { user, loading, hasRole } = useAuth();
