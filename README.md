@@ -179,16 +179,16 @@ GreenLands/
 ## Screenshots
 add these images to the root folder, then leave as is 
 ### Dashboard Page
-![Dashboard Page](./GreenLands/client/public/Screenshots/Dashboard.png)
+![Dashboard Page](./Screenshots/Dashboard.png)
 
 ### Register Page
-![Register Page](./GreenLands/client/public/Screenshots/Register.png)
+![Register Page](./Screenshots/Register.png)
 
 ### Login Page
-![Login Page](./GreenLands/client/public/Screenshots/Login.png)
+![Login Page](./Screenshots/Login.png)
 
 ### Backend Log
-![Backend Logs](./GreenLands/client/public/Screenshots/Backend.png)
+![Backend Logs](./Screenshots/Backend.png)
 
 ### Frontend Log
-![Frontend Logs](./GreenLands/client/public/Screenshots/Frontend.png)
+![Frontend Logs](./Screenshots/Frontend.png)
