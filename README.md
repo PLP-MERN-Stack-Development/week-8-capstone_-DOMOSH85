@@ -169,26 +169,26 @@ GreenLands/
 
 ## Deployment & Demo
 
-- **Frontend:** [https://greenlands-lyart.vercel.app/](https://your-frontend-url)
-- **Backend:** [https://week-8-capstone-domosh85.onrender.com/](https://your-backend-url)
+- **Frontend:** [FRONTEND LINK](https://greenlands-lyart.vercel.app)
+- **Backend:** [BACKEND LINK](https://week-8-capstone-domosh85.onrender.com/)
 - **Screenshots:** See below
 
 ---
 
 
 ## Screenshots
-
+add these images to the root folder, then leave as is 
 ### Dashboard Page
-![Dashboard Page](/GreenLands/client/public/Screenshots/Dashboard.png)
+![Dashboard Page](./GreenLands/client/public/Screenshots/Dashboard.png)
 
 ### Register Page
-![Register Page](/GreenLands/client/public/Screenshots/Register.png)
+![Register Page](./GreenLands/client/public/Screenshots/Register.png)
 
 ### Login Page
-![Login Page](/GreenLands/client/public/Screenshots/Login.png)
+![Login Page](./GreenLands/client/public/Screenshots/Login.png)
 
 ### Backend Log
-![Backend Logs](/GreenLands/client/public/Screenshots/Backend.png)
+![Backend Logs](./GreenLands/client/public/Screenshots/Backend.png)
 
 ### Frontend Log
-![Frontend Logs](/GreenLands/client/public/Screenshots/Frontend.png)
+![Frontend Logs](./GreenLands/client/public/Screenshots/Frontend.png)
